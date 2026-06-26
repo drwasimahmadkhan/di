@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Can Help | Imam Examination (HR)</title>
+<style>
+  :root { --green:#1f7a3d; --green-light:#e8f5ec; --blue:#2563eb; --orange:#e8821f; --border:#d4d4d4; }
+  * { box-sizing:border-box; }
+  body {
+    font-family:"Segoe UI", Tahoma, sans-serif;
+    line-height:1.8; color:#222; max-width:920px; margin:0 auto;
+    padding:24px 20px 60px; background:#fafafa;
+  }
+  body.lang-ur { font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",Tahoma,sans-serif;
+                 direction:rtl; text-align:right; }
+
+  /* Toggle */
+  .toggle-bar { position:sticky; top:0; background:#fafafa; padding:14px 0; z-index:10;
+                border-bottom:2px solid var(--green); display:flex; gap:10px; justify-content:center; }
+  .toggle-bar button {
+    border:2px solid var(--green); background:#fff; color:var(--green);
+    padding:8px 26px; font-size:1em; border-radius:24px; cursor:pointer; font-weight:600; transition:all .15s;
+  }
+  .toggle-bar button.active { background:var(--green); color:#fff; }
+  .toggle-bar button:hover { background:var(--green-light); }
+  .toggle-bar button.active:hover { background:var(--green); }
+
+  /* Language switch — default page is English, so hide Urdu; on lang-ur hide English.
+     This keeps each element's natural display (block for div, inline for span). */
+  body.lang-en .ur { display:none; }
+  body.lang-ur .en { display:none; }
+  body.lang-ur h1, body.lang-ur h2 { text-align:right; }
+  body.lang-ur ol { padding-right:26px; padding-left:0; }
+  body.lang-en ol { padding-left:26px; padding-right:0; }
+
+  h1 { color:var(--green); border-bottom:3px solid var(--green); padding-bottom:10px; font-size:1.6em; margin-top:18px; }
+  h2 { color:var(--green); margin-top:30px; background:var(--green-light);
+       border-left:5px solid var(--green); padding:7px 12px; font-size:1.22em; }
+  body.lang-ur h2 { border-left:none; border-right:5px solid var(--green); }
+
+  .lead { font-size:1.05em; background:#fff; border:1px solid var(--border); border-radius:8px; padding:14px 18px; }
+
+  /* Legend */
+  .legend { background:#fff; border:1px solid var(--border); border-radius:8px; padding:12px 18px; margin:18px 0; }
+  .legend h3 { margin:0 0 8px; font-size:1.05em; color:#333; }
+  .legend div.row { margin:8px 0; }
+
+  ol { margin:10px 0; }
+  li { margin:16px 0; }
+  .ex { font-size:.92em; color:#555; font-style:italic; display:block; margin-top:5px;
+        border-left:3px solid var(--green-light); padding-left:10px; }
+  body.lang-ur .ex { border-left:none; border-right:3px solid var(--green-light); padding-left:0; padding-right:10px; }
+
+  .tag { color:#fff; font-size:.72em; font-style:normal; padding:2px 9px; border-radius:11px;
+         margin:0 5px; vertical-align:middle; white-space:nowrap; font-weight:600; }
+  .tag-ai { background:var(--green); }
+  .tag-sw { background:var(--blue); }
+
+  .note { background:#fff4e6; border-left:5px solid var(--orange); padding:13px 18px; border-radius:6px; margin-top:18px; }
+  body.lang-ur .note { border-left:none; border-right:5px solid var(--orange); }
+  .footer { text-align:center; color:#666; font-size:.85em; margin-top:40px; }
+</style>
+</head>
+<body class="lang-en">
+
+<div class="toggle-bar">
+  <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+  <button id="btn-ur" onclick="setLang('ur')">اردو</button>
+</div>
+
+<h1>
+  <span class="en">How AI Can Help | Imam Examination (HR)</span>
+  <span class="ur">امام امتحان (HR) میں اے آئی کس طرح مدد کر سکتا ہے</span>
+</h1>
+
+<div class="lead">
+  <div class="en">AI can take over the time-consuming paperwork and admin around the Imam tests, so the examiners can focus on judging the candidates. Below is the maximum AI can do. Each task is tagged with the kind of team that builds it, and every point has an example so it is easy to understand.</div>
+  <div class="ur">اے آئی امام ٹیسٹ کے ارد گرد کے وقت طلب کاغذی اور انتظامی کام سنبھال سکتا ہے، تاکہ ممتحنین امیدواروں کی جانچ پر توجہ دے سکیں۔ ذیل میں زیادہ سے زیادہ وہ کام ہیں جو اے آئی کر سکتا ہے۔ ہر کام پر اس ٹیم کا ٹیگ لگا ہے جو اسے بناتی ہے، اور ہر نکتے کے ساتھ مثال دی گئی ہے تاکہ سمجھنا آسان ہو۔</div>
+</div>
+
+<div class="legend">
+  <h3><span class="en">What the tags mean</span><span class="ur">ٹیگ کا مطلب</span></h3>
+  <div class="row">
+    <span class="tag tag-ai">AI Dev</span>
+    <span class="en">Work done with AI models, generating text, translating, reading images and summarizing.</span>
+    <span class="ur">اے آئی ماڈلز سے کیا جانے والا کام، متن بنانا، ترجمہ، تصاویر پڑھنا اور خلاصہ بنانا۔</span>
+  </div>
+  <div class="row">
+    <span class="tag tag-sw">Software Dev</span>
+    <span class="en">Building apps, sheets, forms, scoring logic, certificates and databases, plus the setup and hosting to run them online.</span>
+    <span class="ur">ایپس، شیٹس، فارمز، اسکورنگ کی منطق، اسناد اور ڈیٹابیس بنانا، اور انہیں آن لائن چلانے کے لیے سیٹ اپ اور ہوسٹنگ۔</span>
+  </div>
+</div>
+
+<h2><span class="en">1. Documents &amp; Manuals</span><span class="ur">۱۔ دستاویزات اور مینوئل</span></h2>
+<ol>
+  <li>
+    <span class="en">Turn the exam PDF and images into clean, editable, searchable documents. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">امتحانی پی ڈی ایف اور تصاویر کو صاف، قابلِ تدوین اور قابلِ تلاش دستاویزات میں بدلنا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> your 4 WhatsApp images of the Azkar criteria become one Word file you can edit and search.</span><span class="ur"><b>مثال:</b> اذکار معیار کی آپ کی 4 واٹس ایپ تصاویر ایک ورڈ فائل بن جائیں جسے آپ ایڈٹ اور سرچ کر سکیں۔</span></span>
+  </li>
+  <li>
+    <span class="en">Build a complete Examiner's Handbook and Marking Manual. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">مکمل ممتحن ہینڈ بک اور مارکنگ مینوئل تیار کرنا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> all marking rules from the Tadrees PDF combined into one printed guide every examiner follows.</span><span class="ur"><b>مثال:</b> تدریس پی ڈی ایف کے تمام مارکنگ اصول ایک چھپی ہوئی گائیڈ میں جمع، جس پر ہر ممتحن عمل کرے۔</span></span>
+  </li>
+  <li>
+    <span class="en">Translate all material between Urdu, English and Arabic. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">تمام مواد کا اردو، انگریزی اور عربی میں ترجمہ کرنا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> an Arabic Masail reference instantly turned into Urdu for the candidates.</span><span class="ur"><b>مثال:</b> ایک عربی مسائل حوالہ فوراً امیدواروں کے لیے اردو میں تبدیل۔</span></span>
+  </li>
+</ol>
+
+<h2><span class="en">2. Marking &amp; Results</span><span class="ur">۲۔ مارکنگ اور نتائج</span></h2>
+<ol>
+  <li>
+    <span class="en">Create automatic scoring sheets that decide Pass / Fail instantly. <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ur">خودکار اسکورنگ شیٹس بنانا جو فوراً پاس/فیل کا فیصلہ کریں۔ <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> the examiner types 38 / 50 and the sheet shows "Pass, Medium" by itself.</span><span class="ur"><b>مثال:</b> ممتحن 50 میں سے 38 لکھے اور شیٹ خود بخود "پاس، متوسط" دکھائے۔</span></span>
+  </li>
+  <li>
+    <span class="en">Auto-summarize and standardize examiner reports. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">ممتحن رپورٹوں کا خودکار خلاصہ اور یکسانیت بنانا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> 20 examiner notes turned into one clear summary for the head of department.</span><span class="ur"><b>مثال:</b> 20 ممتحنین کے نوٹس سربراہِ شعبہ کے لیے ایک واضح خلاصے میں۔</span></span>
+  </li>
+  <li>
+    <span class="en">Auto-generate certificates and result slips for passed candidates. <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ur">پاس امیدواروں کے لیے خودکار اسناد اور رزلٹ سلپ بنانا۔ <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> as soon as a candidate passes, a ready certificate PDF with his name is created.</span><span class="ur"><b>مثال:</b> امیدوار کے پاس ہوتے ہی اس کے نام کے ساتھ تیار سند پی ڈی ایف بن جائے۔</span></span>
+  </li>
+</ol>
+
+<h2><span class="en">3. Candidates &amp; Question Banks</span><span class="ur">۳۔ امیدوار اور سوالاتی ذخیرے</span></h2>
+<ol>
+  <li>
+    <span class="en">Prepare candidate guideline handouts, what is tested and how to pass. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">امیدوار رہنما ہینڈ آؤٹس بنانا، کیا ٹیسٹ ہوگا اور پاس کیسے ہوں۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> a one-page sheet telling applicants the 5 recitation sections and how marks are given.</span><span class="ur"><b>مثال:</b> ایک صفحے کی شیٹ جو امیدواروں کو 5 تلاوتی حصے اور نمبر دینے کا طریقہ بتائے۔</span></span>
+  </li>
+  <li>
+    <span class="en">Generate large question banks for Masail-e-Namaz and Farz Uloom. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">مسائلِ نماز اور فرض علوم کے لیے بڑے سوالاتی ذخیرے تیار کرنا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> 200 Masail-e-Namaz questions with answers generated for the written test.</span><span class="ur"><b>مثال:</b> تحریری ٹیسٹ کے لیے 200 مسائلِ نماز سوالات بمع جوابات تیار۔</span></span>
+  </li>
+  <li>
+    <span class="en">Run online knowledge tests for the written (non-recitation) sections. <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ur">تحریری (غیر تلاوت) حصوں کے لیے آن لائن علمی ٹیسٹ چلانا۔ <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> candidates answer Farz Uloom MCQs on a phone and results are saved automatically.</span><span class="ur"><b>مثال:</b> امیدوار فون پر فرض علوم کے MCQs حل کریں اور نتائج خود بخود محفوظ ہو جائیں۔</span></span>
+  </li>
+</ol>
+
+<h2><span class="en">4. Records &amp; Training</span><span class="ur">۴۔ ریکارڈ اور تربیت</span></h2>
+<ol>
+  <li>
+    <span class="en">Maintain a candidate database, records, results and history. <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ur">امیدواروں کا ڈیٹابیس رکھنا، ریکارڈ، نتائج اور تاریخ۔ <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> search any candidate's name and instantly see all his past attempts and results.</span><span class="ur"><b>مثال:</b> کسی بھی امیدوار کا نام تلاش کریں اور فوراً اس کی تمام پچھلی کوششیں اور نتائج دیکھیں۔</span></span>
+  </li>
+  <li>
+    <span class="en">Convert the sample videos into written, searchable training notes. <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ur">نمونہ ویڈیوز کو تحریری، قابلِ تلاش تربیتی نوٹس میں بدلنا۔ <span class="tag tag-ai">AI Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> the Pass / Fail sample videos become written notes new examiners can read quickly.</span><span class="ur"><b>مثال:</b> پاس/فیل نمونہ ویڈیوز تحریری نوٹس بن جائیں جنہیں نئے ممتحنین جلدی پڑھ سکیں۔</span></span>
+  </li>
+  <li>
+    <span class="en">Provide an AI assistant that answers examiners' questions from the handbook. <span class="tag tag-ai">AI Dev</span> <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ur">ایک اے آئی معاون دینا جو ہینڈ بک سے ممتحنین کے سوالات کے جواب دے۔ <span class="tag tag-ai">AI Dev</span> <span class="tag tag-sw">Software Dev</span></span>
+    <span class="ex"><span class="en"><b>Example:</b> an examiner asks "what is the pass mark for Makharij?" and gets the exact answer from the handbook.</span><span class="ur"><b>مثال:</b> ممتحن پوچھے "مخارج کے لیے پاس نمبر کیا ہے؟" اور ہینڈ بک سے درست جواب پا لے۔</span></span>
+  </li>
+</ol>
+
+<div class="note">
+  <span class="en"><strong>Note:</strong> the actual judging of Quran recitation (Tajweed / Lahn-e-Jali) stays with the human examiners. AI assists everything around it.</span>
+  <span class="ur"><strong>نوٹ:</strong> قرآنی تلاوت (تجوید / لحنِ جلی) کی اصل جانچ انسانی ممتحنین کے پاس ہی رہے گی۔ اے آئی اس کے ارد گرد ہر کام میں مدد کرتا ہے۔</span>
+</div>
+
+<div class="footer">Dawat-e-Islami | Dr. Wasim Ahmad Attari (HR / Test Majlis)</div>
+
+<script>
+  function setLang(lang){
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    document.getElementById('btn-ur').classList.toggle('active', lang==='ur');
+  }
+</script>
+</body>
+</html>
